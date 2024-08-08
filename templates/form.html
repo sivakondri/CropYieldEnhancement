@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Effective HTML Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: 80%;
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    form {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"] {
+        width: calc(100% - 22px);
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    .error {
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>What to plant</h2>
+    <form id="plantForm" action="/submit" method="post" onsubmit="return validateForm()">
+        <label for="nitrogen">Nitrogen Level:</label>
+        <input type="text" id="nitrogen" name="nitrogen" placeholder="Enter nitrogen level (0-100)" required>
+        <span id="nitrogenError" class="error"></span>
+        
+        <label for="phosphorus">Phosphorus Level:</label>
+        <input type="text" id="phosphorus" name="phosphorus" placeholder="Enter phosphorus level (0-100)" required>
+        <span id="phosphorusError" class="error"></span>
+        
+        <label for="potassium">Potassium Level:</label>
+        <input type="text" id="potassium" name="potassium" placeholder="Enter potassium level (0-100)" required>
+        <span id="potassiumError" class="error"></span>
+        
+        <label for="temperature">Temperature (°C):</label>
+        <input type="text" id="temperature" name="temperature" placeholder="Enter temperature in Celsius" required>
+        <span id="temperatureError" class="error"></span>
+        
+        <label for="humidity">Humidity (%):</label>
+        <input type="text" id="humidity" name="humidity" placeholder="Enter humidity percentage" required>
+        <span id="humidityError" class="error"></span>
+        
+        <label for="ph">pH Level:</label>
+        <input type="text" id="ph" name="ph" placeholder="Enter pH level (0-14)" required>
+        <span id="phError" class="error"></span>
+        
+        <label for="rainfall">Rainfall (mm):</label>
+        <input type="text" id="rainfall" name="rainfall" placeholder="Enter rainfall in millimeters" required>
+        <span id="rainfallError" class="error"></span>
+        
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<script>
+    function validateForm() {
+        var isValid = true;
+        var errors = {};
+
+        var nitrogen = document.getElementById('nitrogen').value.trim();
+        var phosphorus = document.getElementById('phosphorus').value.trim();
+        var potassium = document.getElementById('potassium').value.trim();
+        var temperature = document.getElementById('temperature').value.trim();
+        var humidity = document.getElementById('humidity').value.trim();
+        var ph = document.getElementById('ph').value.trim();
+        var rainfall = document.getElementById('rainfall').value.trim();
+
+        if (isNaN(nitrogen) || parseInt(nitrogen) < 0 || parseInt(nitrogen) > 100) {
+            errors["nitrogenError"] = "Nitrogen level must be a number between 0 and 100.";
+            isValid = false;
+        }
+
+        if (isNaN(phosphorus) || parseInt(phosphorus) < 0 || parseInt(phosphorus) > 100) {
+            errors["phosphorusError"] = "Phosphorus level must be a number between 0 and 100.";
+            isValid = false;
+        }
+
+        if (isNaN(potassium) || parseInt(potassium) < 0 || parseInt(potassium) > 100) {
+            errors["potassiumError"] = "Potassium level must be a number between 0 and 100.";
+            isValid = false;
+        }
+
+        if (isNaN(temperature) || parseInt(temperature) < 0) {
+            errors["temperatureError"] = "Temperature must be a non-negative number.";
+            isValid = false;
+        }
+
+        if (isNaN(humidity) || parseInt(humidity) < 0 || parseInt(humidity) > 100) {
+            errors["humidityError"] = "Humidity must be a number between 0 and 100.";
+            isValid = false;
+        }
+
+        if (isNaN(ph) || parseInt(ph) < 0 || parseInt(ph) > 14) {
+            errors["phError"] = "pH level must be a number between 0 and 14.";
+            isValid = false;
+        }
+
+        if (isNaN(rainfall) || parseInt(rainfall) < 0) {
+            errors["rainfallError"] = "Rainfall must be a non-negative number.";
+            isValid = false;
+        }
+
+        // Display errors
+        for (var errorId in errors) {
+            if (errors.hasOwnProperty(errorId)) {
+                document.getElementById(errorId).innerHTML = errors[errorId];
+            }
+        }
+
+        return isValid;
+    }
+</script>
+
+</body>
+</html>

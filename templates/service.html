@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Crop Yield Enhancement</title>
+    <style>
+        /* Your existing CSS styles */
+        /* Reset default browser styles */
+        body, h1, h2, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .content h2 {
+            margin-top: 20px;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+        }
+
+        .service {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .service h3 {
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Our Services</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="{{url_for('about')}}">About</a></li>
+                <li><a href="{{url_for('service')}}">Services</a></li>
+                <li><a href="{{url_for('contact')}}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="content">
+        <div class="service">
+            <h3>Crop Recommendation</h3>
+            <p>We provide personalized crop recommendations based on soil analysis and environmental factors.</p>
+        </div>
+        <div class="service">
+            <h3>Soil Analysis</h3>
+            <p>Our soil analysis services help farmers understand the composition of their soil, allowing for better crop management.</p>
+        </div>
+        <div class="service">
+            <h3>Customized Crop Management Plans</h3>
+            <p>We develop tailored crop management plans to optimize yield and minimize resource use.</p>
+        </div>
+    
+        <div class="service">
+            <h3>Pest and Disease Management</h3>
+            <p>We offer strategies and solutions for pest and disease management to protect crops and maximize yield.</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Crop Yield Enhancement.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div align="center"><title>Crop Yield Enhancement</title></div>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 20px;
+            position: relative; /* Make header position relative for absolute positioning of logo */
+        }
+
+        header h1 {
+            margin: 0;
+            display: inline; /* Display the h1 inline with the logo */
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: inline; /* Display the navigation inline with the logo */
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .hero {
+            background-image: url("{{ url_for('static', filename='olivier-guillard-xnGu_KGrqX8-unsplash.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+        footer p {
+            margin: 0;
+        }
+        .college-logo {
+    position: absolute;
+    bottom: 20px; /* Adjust the distance from the bottom as needed */
+    left: 50%; /* Position at the horizontal center */
+    transform: translateX(-50%); /* Move back half of the width to center it */
+    height: 120px; /* Adjust the height as needed */
+    width: auto; /* Maintain aspect ratio */
+}
+
+footer {
+    background-color: #4c3939; /* Change the background color of the footer */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative; /* Make footer position relative for absolute positioning of logo */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Crop Yield Enhancement</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="{{url_for('about')}}">About</a></li>
+                <li><a href="{{url_for('service')}}">Services</a></li>
+                <li><a href="{{url_for('contact')}}">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- College logo -->
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Welcome to Crop Yield Enhancement</h2>
+            <p>Empowering farmers with innovative solutions for better crop yield.</p>
+            <a href="{{url_for('form')}}" class="btn">WhatToPlant</a>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Crop Yield Enhancement</p>
+
+    </footer>
+   <a href="https://www.mvgrce.com/"> <img src="{{ url_for('static', filename='download.png') }}" alt="College Logo" class="college-logo"></a>
+
+</body>
+</html>

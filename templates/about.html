@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Crop Yield Enhancement</title>
+    <style>
+        /* Reset default browser styles */
+        body, h1, h2, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .content h2 {
+            margin-top: 20px;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Us</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="{{url_for('about')}}">About</a></li>
+                <li><a href="{{url_for('service')}}">Services</a></li>
+                <li><a href="{{url_for('contact')}}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="content">
+        <h2>Our Mission</h2>
+    <p>Our mission is to empower farmers by providing them with invaluable insights and data-driven recommendations for optimizing crop yield. By leveraging advanced algorithms and analyzing soil composition, climatic conditions, and other crucial factors, we aim to assist farmers in making informed decisions when selecting the most suitable crops to cultivate. Through our innovative solutions, we aspire to revolutionize agriculture practices, ensuring sustainable growth and maximizing productivity for farmers worldwide. </p>
+        <h2>Our Team</h2>
+        <p>we are the team of four members
+            <ol>
+                <li>K.SIVA SANKAR</li>
+                <li>LAHARI</li>
+                <li>SANJAY</li>
+                <li>SEETHA MAHALAXMI</li>
+            </ol>
+        </p>
+    </section>
+    
+</body>
+</html>
